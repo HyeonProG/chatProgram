@@ -15,6 +15,9 @@ import javax.swing.JPanel;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.EmptyBorder;
 
+import lombok.Data;
+
+@Data
 public class ServerGui {
 
 	private BackgroundPanel backgroundPanel;
@@ -22,7 +25,7 @@ public class ServerGui {
 	private JFrame serverFrame;
 	private TextArea chatTextArea;
 	protected TextField chatTextField;
-	private JList list;
+	private JList list; // 여러 개의 선택 항목 중에서 하나를 선택하기 위한 컴포넌트
 	private DefaultListModel model; // 문자열 같은 아이템 추가
 
 	private class BackgroundPanel extends JPanel {

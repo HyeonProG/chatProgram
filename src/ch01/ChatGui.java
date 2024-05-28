@@ -73,7 +73,7 @@ public class ChatGui extends JFrame {
 		backgroundPanel.add(chatLog);
 		
 		JLabel userListLabel = new JLabel("유저 목록");
-		userListLabel.setBounds(640, 16, 100, 16);
+		userListLabel.setBounds(670, 16, 100, 16);
 		backgroundPanel.add(userListLabel);
 		
 		model = new DefaultListModel();
@@ -96,7 +96,7 @@ public class ChatGui extends JFrame {
 				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
 					String text = textMsg.getText();
 					writer.println(text); // 텍스트를 서버로 전송
-					textMsg.setText(""); // 텍스트 필그의 값 지움 - 초기화
+					textMsg.setText(""); // 텍스트 필드의 값 지움 - 초기화
 				}
 			}
 		});

@@ -81,7 +81,7 @@ public class ServerGui {
 		backgroundPanel.add(list);
 
 		serverFrame.setResizable(false);
-		serverFrame.setTitle("채팅 프로그램 서버");
+		serverFrame.setTitle("Talk Talk - 서버 관리자");
 		serverFrame.setVisible(true);
 
 	}
@@ -94,10 +94,12 @@ public class ServerGui {
 		chatTextField.setText(null);
 	}
 
+	// 텍스트 값을 받아 GUI에 출력
 	public void appendMessage(String message) {
 		chatTextArea.append(message + "\n");
 	}
 
+	// 유저 아이디를 받아 유저 리스트에 추가
 	public void appendUserList(String user) {
 		model.addElement(user);
 	}

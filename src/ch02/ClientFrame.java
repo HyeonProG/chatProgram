@@ -42,6 +42,7 @@ public class ClientFrame extends JFrame {
 	private void initSetting() {
 		setTitle("[ Talk Talk ]");
 		setSize(400, 550);
+		setResizable(false);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 

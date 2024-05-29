@@ -152,8 +152,8 @@ public class Server {
 				// 입출력 장치
 				reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 				writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-
 				sendInfomation();
+				
 			} catch (IOException e) {
 				JOptionPane.showMessageDialog(null, "서버 입출력 장치 에러!", "알림", JOptionPane.ERROR_MESSAGE, icon);
 				serverViewAppendWriter("[에러] 서버 입출력 장치 에러 ! !\n");
@@ -176,7 +176,7 @@ public class Server {
 				// 방금 연결된 유저측에서 유저 명단 업데이트를 위한 출력
 				connectedUser();
 
-				// 방금 연결된 유저측에서 룸 명단 업데이트를 위한 출력
+				// 방금 연결된 유저측에서 방 명단 업데이트를 위한 출력
 				madeRoom();
 
 			} catch (IOException e) {

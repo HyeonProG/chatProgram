@@ -58,9 +58,9 @@ public class ServerFrame extends JFrame {
 
 		// 포트패널
 		portPanel = new JPanel();
-		portLabel = new JLabel("PORT NUMBER");
+		portLabel = new JLabel("포트 번호");
 		inputPort = new JTextField(10);
-		connectBtn = new JButton("Connect");
+		connectBtn = new JButton("연결");
 
 		// 포트번호
 		inputPort.setText("5000");

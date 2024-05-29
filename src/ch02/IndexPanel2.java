@@ -24,14 +24,13 @@ import javax.swing.border.TitledBorder;
 import lombok.Data;
 
 @Data
-public class IndexPanel extends JPanel {
+public class IndexPanel2 extends JPanel {
 
 	// 백그라운드 이미지 컴포넌트
 	private Image backgroundImage;
 	private JPanel backgroundPanel;
 
 	// 보더 컴포넌트
-	private Image borderImage;
 	private JPanel borderPanel;
 
 	// ip 컴포넌트
@@ -54,7 +53,7 @@ public class IndexPanel extends JPanel {
 
 	private CallBackClientService callBackService;
 
-	public IndexPanel(CallBackClientService callBackService) {
+	public IndexPanel2(CallBackClientService callBackService) {
 		this.callBackService = callBackService;
 		initObject();
 		initSetting();
@@ -68,7 +67,6 @@ public class IndexPanel extends JPanel {
 
 		// 보더 컴포넌트
 		borderPanel = new JPanel();
-		borderImage = new ImageIcon("images/backgroundimage.jpg").getImage();
 
 		// IP 컴포넌트
 		ipPanel = new JPanel();
@@ -99,39 +97,37 @@ public class IndexPanel extends JPanel {
 		add(backgroundPanel);
 
 		// 보더 컴포넌트
-		borderPanel.setSize(getWidth(), getHeight());
+		borderPanel.setBounds(100, 60, 190, 380);
 		borderPanel.setLayout(null);
+		borderPanel.setBackground(Color.white);
+		borderPanel.setBorder(new TitledBorder(new LineBorder(Color.BLACK, 5), "Login"));
 		add(borderPanel);
 
 		// IP 컴포넌트
-		ipPanel.setBounds(135, 150, 120, 100);
+		ipPanel.setBounds(30, 40, 120, 100);
 		ipPanel.setBackground(new Color(0, 0, 0, 0));
 		ipPanel.add(ipLabel);
 		ipPanel.add(inputIp);
 		borderPanel.add(ipPanel);
-		add(ipPanel);
 
 		// PORT 컴포넌트
-		portPanel.setBounds(135, 200, 120, 100);
+		portPanel.setBounds(30, 140, 120, 100);
 		portPanel.setBackground(new Color(0, 0, 0, 0));
 		portPanel.add(portLabel);
 		portPanel.add(inputPort);
 		borderPanel.add(portPanel);
-		add(portPanel);
 
 		// ID 컴포넌트
-		idPanel.setBounds(135, 280, 120, 100);
+		idPanel.setBounds(30, 240, 120, 100);
 		idPanel.setBackground(new Color(0, 0, 0, 0));
 		idPanel.add(idLabel);
 		idPanel.add(inputId);
 		borderPanel.add(idPanel);
-		add(idPanel);
 
 		// LoginBtn 컴포넌트
 		connectBtn.setBackground(Color.WHITE);
-		connectBtn.setBounds(135, 340, 120, 20);
+		connectBtn.setBounds(30, 340, 120, 20);
 		borderPanel.add(connectBtn);
-		add(connectBtn);
 
 		// 코드 테스트
 		inputIp.setText("127.0.0.1");

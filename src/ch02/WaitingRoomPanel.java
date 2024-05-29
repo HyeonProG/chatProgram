@@ -22,20 +22,25 @@ import lombok.Data;
 @Data
 public class WaitingRoomPanel extends JPanel implements ActionListener {
 
+	// 백그라운드
 	private Image backgroundImage;
 	private JPanel backgroundPanel;
-
+	// 유저, 방 리스트
 	private JPanel userListPanel;
+	private Image userListImage;
 	private JPanel roomListPanel;
+	private Image roomListImage;
 	private JPanel roomBtnPanel;
-	private JPanel sendMessagePanel;
+	private Image roomBtnImage;
 
 	private JList<String> userList;
 	private JList<String> roomList;
-
+	
+	private JPanel sendMessagePanel;
+	// 비밀 메세지
 	private JTextField inputSecretMsg;
 	private JButton secretMsgBtn;
-
+	// 버튼
 	private JButton makeRoomBtn;
 	private JButton outRoomBtn;
 	private JButton enterRoomBtn;
@@ -57,18 +62,21 @@ public class WaitingRoomPanel extends JPanel implements ActionListener {
 		backgroundPanel = new JPanel();
 
 		userListPanel = new JPanel();
+		userListImage = new ImageIcon("images/backgroundimage.jpg").getImage();
 		roomListPanel = new JPanel();
+		roomListImage = new ImageIcon("images/backgroundimage.jpg").getImage();
 		roomBtnPanel = new JPanel();
+		roomBtnImage = new ImageIcon("images/backgroundimage.jpg").getImage();
 		sendMessagePanel = new JPanel();
 
 		userList = new JList<>();
 		roomList = new JList<>();
 
 		inputSecretMsg = new JTextField();
-		secretMsgBtn = new JButton("send Message");
-		makeRoomBtn = new JButton("makeRoom");
-		outRoomBtn = new JButton("outRoom");
-		enterRoomBtn = new JButton("enterRoom");
+		secretMsgBtn = new JButton("Send");
+		makeRoomBtn = new JButton("MakeRoom");
+		outRoomBtn = new JButton("OutRoom");
+		enterRoomBtn = new JButton("EnterRoom");
 	}
 
 	private void initSetting() {
@@ -88,16 +96,18 @@ public class WaitingRoomPanel extends JPanel implements ActionListener {
 		roomListPanel.add(roomList);
 		add(roomListPanel);
 
+		roomBtnPanel.setSize(getWidth(), getHeight());
+		roomBtnPanel.setLayout(null);
+		
 		roomBtnPanel.setBounds(50, 310, 300, 30);
 		roomBtnPanel.setBackground(Color.WHITE);
-		roomBtnPanel.setLayout(null);
 
 		makeRoomBtn.setBackground(Color.WHITE);
 		makeRoomBtn.setBounds(0, 5, 100, 25);
 		makeRoomBtn.setEnabled(false);
 
 		outRoomBtn.setBackground(Color.WHITE);
-		outRoomBtn.setBounds(108, 5, 85, 25);
+		outRoomBtn.setBounds(105, 5, 90, 25);
 		outRoomBtn.setEnabled(false);
 
 		enterRoomBtn.setBackground(Color.WHITE);
@@ -151,7 +161,7 @@ public class WaitingRoomPanel extends JPanel implements ActionListener {
 
 		} else if (e.getSource() == outRoomBtn) {
 
-			String roomName = roomList.getSelectedValue();
+			String roomName = roomList.getSelectedValue(); // getSelectedValue() : 선택된 항목 반환
 			callBackService.clickOutRoomBtn(roomName);
 			roomList.setSelectedValue(null, false);
 

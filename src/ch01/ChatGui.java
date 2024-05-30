@@ -39,7 +39,6 @@ public class ChatGui extends JFrame {
 	private User user;
 	Vector<ServerMessageReader> chatlist = new Vector<>();
 
-
 	// 배경 이미지
 	private class BackgroundPanel extends JPanel {
 		private JPanel backgroundPanel;
@@ -161,7 +160,7 @@ public class ChatGui extends JFrame {
 					System.out.println("서버로부터 메세지 : " + message);
 					String[] msgs = message.split("/");
 					if (msgs[0].equals("login")) {
-						uploadText(msgs[1]+ "님이 입장하셨습니다.");
+						uploadText(msgs[1] + "님이 입장하셨습니다.");
 						appendUserList(msgs[1]);
 					} else if (message.equals("quit")) {
 						removeUserList(user.getId());
